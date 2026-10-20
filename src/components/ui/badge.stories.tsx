@@ -37,7 +37,7 @@ export const Link: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2">
+    <div className="tw:flex tw:flex-wrap tw:gap-2">
       <Badge variant="default">Active</Badge>
       <Badge variant="secondary">Pending</Badge>
       <Badge variant="destructive">Offline</Badge>
@@ -50,18 +50,18 @@ export const AllVariants: Story = {
 
 export const DashboardUsage: Story = {
   render: () => (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-2">
+    <div className="tw:flex tw:flex-col tw:gap-2">
+      <div className="tw:flex tw:gap-2">
         <Badge variant="destructive">Offline</Badge>
         <Badge variant="default">Active</Badge>
         <Badge variant="secondary">Pending</Badge>
       </div>
-      <div className="flex gap-2">
+      <div className="tw:flex tw:gap-2">
         <Badge variant="destructive">Denied</Badge>
         <Badge variant="default">Accepted</Badge>
         <Badge variant="secondary">Waiting Approval</Badge>
       </div>
-      <div className="flex gap-2">
+      <div className="tw:flex tw:gap-2">
         <Badge variant="destructive">Expiring soon</Badge>
         <Badge variant="default">Active</Badge>
         <Badge variant="destructive">Expired</Badge>

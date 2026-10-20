@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => (
-    <Card className="w-90">
+    <Card className="tw:w-90">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card description goes here.</CardDescription>
@@ -38,7 +38,7 @@ export const Default: Story = {
 
 export const Small: Story = {
   render: () => (
-    <Card size="sm" className="w-90">
+    <Card size="sm" className="tw:w-90">
       <CardHeader>
         <CardTitle>Small Card</CardTitle>
         <CardDescription>Compact size variant.</CardDescription>
@@ -52,7 +52,7 @@ export const Small: Story = {
 
 export const WithAction: Story = {
   render: () => (
-    <Card className="w-90">
+    <Card className="tw:w-90">
       <CardHeader>
         <CardTitle>Card With Action</CardTitle>
         <CardDescription>Card with an action in the header.</CardDescription>
@@ -69,7 +69,7 @@ export const WithAction: Story = {
 
 export const ContentOnly: Story = {
   render: () => (
-    <Card className="w-90">
+    <Card className="tw:w-90">
       <CardContent>
         <p>Card with content only — no header or footer.</p>
       </CardContent>
@@ -79,7 +79,7 @@ export const ContentOnly: Story = {
 
 export const WithFooterAction: Story = {
   render: () => (
-    <Card className="w-90">
+    <Card className="tw:w-90">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card with a footer action.</CardDescription>
@@ -96,7 +96,7 @@ export const WithFooterAction: Story = {
 
 export const DashboardCard: Story = {
   render: () => (
-    <Card className="w-90">
+    <Card className="tw:w-90">
       <CardHeader>
         <CardTitle>Devices</CardTitle>
         <CardAction>

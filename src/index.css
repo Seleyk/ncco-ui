@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import "tailwindcss";
+@import "tailwindcss" prefix(tw);
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @import "./styles/tokens.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -125,14 +124,12 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  .ncco-ui,
+  .ncco-ui * {
+    @apply tw:border-border tw:outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+  .ncco-ui {
+    @apply tw:bg-background tw:text-foreground tw:font-sans;
     font-family: var(--ncco-font-font-sans-condensed);
-  }
-  html {
-    @apply font-sans;
   }
 }

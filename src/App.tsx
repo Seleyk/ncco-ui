@@ -16,8 +16,8 @@ import { Label } from "./components/ui/label";
 function App() {
   return (
     <div className="">
-      <h1 className="text-3xl font-bold">Button Component</h1>
-      <div className="flex gap-4 flex-col md:flex-row items-center justify-center mt-4">
+      <h1 className="tw:text-3xl tw:font-bold">Button Component</h1>
+      <div className="tw:flex tw:gap-4 tw:flex-col tw:md:flex-row tw:items-center tw:justify-center tw:mt-4">
         <Button variant="default">Add story</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="destructive">Destructive</Button>
@@ -25,7 +25,7 @@ function App() {
         <Button variant="ghost">Ghost</Button>
         <Button variant="link">Link</Button>
       </div>
-      <Card size="sm" className="w-90">
+      <Card size="sm" className="tw:w-90">
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>
           <CardDescription>
@@ -38,8 +38,8 @@ function App() {
         </CardHeader>
         <CardContent>
           <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
+            <div className="tw:flex tw:flex-col tw:gap-6">
+              <div className="tw:grid tw:gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -48,12 +48,12 @@ function App() {
                   required
                 />
               </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
+              <div className="tw:grid tw:gap-2">
+                <div className="tw:flex tw:items-center">
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                    className="tw:ml-auto tw:inline-block tw:text-sm tw:underline-offset-4 tw:hover:underline"
                   >
                     Forgot your password?
                   </a>
@@ -63,11 +63,11 @@ function App() {
             </div>
           </form>
         </CardContent>
-        <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
+        <CardFooter className="tw:flex-col tw:gap-2">
+          <Button type="submit" className="tw:w-full">
             Login
           </Button>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="tw:w-full">
             Login with Google
           </Button>
         </CardFooter>
