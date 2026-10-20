@@ -3,6 +3,47 @@
 All notable changes to @ncco/ui will be documented here.
 Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-10-20
+
+### Changed
+
+- **BREAKING:** The library now ships its own compiled CSS. Consumers must
+  `import "@ncco/ui-alpha/css"` once at their app root; previously the library
+  relied on the consuming app's Tailwind to generate component styles. See
+  [Migrating to 0.3.0](./README.md#migrating-to-030-breaking).
+- **BREAKING:** All component utilities are now namespaced with a `tw:` prefix,
+  so they cannot collide with host CSS (e.g. Bootstrap/Argon). Components
+  rendered without the compiled stylesheet appear unstyled (no build error).
+- Scoped the base layer (`background`, `text`, `font`, default `border`/`outline`
+  color) under `.ncco-ui` so the library's reset stops at the boundary and never
+  touches the host's `body`/`html`.
+- `cn()` now uses a prefix-aware `tailwind-merge` so conflicting `tw:`-prefixed
+  classes merge correctly.
+
+### Added
+
+- `./css` package export — the full compiled stylesheet (tokens + prefixed
+  utilities + component base).
+- Components: Badge, Card, Chart, Field, Input, Label, MetricCard, Progress,
+  Separator, Table.
+
+### Removed
+
+- The Bootstrap/Argon CSS compatibility shim is no longer required and has been
+  removed from the docs. The `tw:` prefix makes collisions impossible, so the
+  per-element `!important` overrides are obsolete. Consumers should delete the
+  shim, the token redefinition block, and any Tailwind `@source` pointing at the
+  library when upgrading.
+
+### Migration
+
+1. Add `import "@ncco/ui-alpha/css";` at your app root.
+2. Render components inside a `.ncco-ui` element.
+3. Remove any Tailwind `@source`/`content` entry for `@ncco/ui-alpha`, any
+   redefinition of design tokens, and the Bootstrap/Argon shim.
+
+[0.3.0]: https://nccoit.visualstudio.com/Department%20Planning/_artifacts/feed/xperimental.ncco-ui/Npm/@ncco%2Fui-alpha/overview/
+
 ## [0.2.5] - 2026-06-02
 
 ### Added

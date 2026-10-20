@@ -1,27 +1,27 @@
-import * as React from 'react'
-import { PieChart, Pie, Cell } from 'recharts'
-import { TrendingUp, TrendingDown } from 'lucide-react'
-import { Card, CardHeader, CardContent, CardTitle } from './card'
-import { ChartContainer } from './chart'
-import type { ChartConfig } from './chart'
-import { cn } from '@/lib/utils'
+import * as React from "react";
+import { PieChart, Pie, Cell } from "recharts";
+import { TrendingUp, TrendingDown } from "lucide-react";
+import { Card, CardHeader, CardContent, CardTitle } from "./card";
+import { ChartContainer } from "./chart";
+import type { ChartConfig } from "./chart";
+import { cn } from "@/lib/utils";
 
 export interface MetricCardTrend {
-  value: string
-  direction: 'positive' | 'negative' | 'neutral'
+  value: string;
+  direction: "positive" | "negative" | "neutral";
 }
 
 export interface MetricCardProps {
-  title: string
-  value: string | number
-  activePercent: number
-  inactivePercent: number
-  activeLabel?: string
-  inactiveLabel?: string
-  trend?: MetricCardTrend
-  icon?: React.ReactNode
-  size?: 'default' | 'sm'
-  className?: string
+  title: string;
+  value: string | number;
+  activePercent: number;
+  inactivePercent: number;
+  activeLabel?: string;
+  inactiveLabel?: string;
+  trend?: MetricCardTrend;
+  icon?: React.ReactNode;
+  size?: "default" | "sm";
+  className?: string;
 }
 
 export function MetricCard({
@@ -33,50 +33,50 @@ export function MetricCard({
   inactiveLabel,
   trend,
   icon,
-  size = 'default',
+  size = "default",
   className,
 }: MetricCardProps) {
   const donutData = [
-    { status: 'active', value: activePercent },
-    { status: 'inactive', value: inactivePercent },
-  ]
+    { status: "active", value: activePercent },
+    { status: "inactive", value: inactivePercent },
+  ];
 
   const chartConfig = {
     active: {
       label: activeLabel ?? `Active ${activePercent}%`,
-      color: 'var(--ncco-colors-primary-light)',
+      color: "var(--ncco-colors-primary-light)",
     },
     inactive: {
       label: inactiveLabel ?? `Inactive ${inactivePercent}%`,
-      color: 'var(--ncco-colors-muted-foreground-light)',
+      color: "var(--ncco-colors-muted-foreground-light)",
     },
-  } satisfies ChartConfig
+  } satisfies ChartConfig;
 
   const donutFills = {
-    active: 'var(--ncco-colors-primary-light)',
-    inactive: 'var(--ncco-colors-muted-light)',
-  }
+    active: "var(--ncco-colors-primary-light)",
+    inactive: "var(--ncco-colors-muted-light)",
+  };
 
-  const isSmall = size === 'sm'
+  const isSmall = size === "sm";
 
   return (
-    <Card size={size} className={cn('w-full', className)}>
+    <Card size={size} className={cn("tw:w-full", className)}>
       <CardHeader>
-        <CardTitle className={isSmall ? 'text-xs' : 'text-sm'}>
+        <CardTitle className={isSmall ? "tw:text-xs" : "tw:text-sm"}>
           {title}
         </CardTitle>
         {icon && (
-          <div className="col-start-2 row-start-1 self-start justify-self-end text-muted-foreground">
+          <div className="tw:col-start-2 tw:row-start-1 tw:self-start tw:justify-self-end tw:text-muted-foreground">
             {icon}
           </div>
         )}
       </CardHeader>
       <CardContent>
-        <div className="flex items-center gap-3">
+        <div className="tw:flex tw:items-center tw:gap-3">
           {/* Donut */}
           <ChartContainer
             config={chartConfig}
-            className={isSmall ? 'h-10 w-10' : 'h-14 w-14'}
+            className={isSmall ? "tw:h-10 tw:w-10" : "tw:h-14 tw:w-14"}
           >
             <PieChart>
               <Pie
@@ -99,32 +99,54 @@ export function MetricCard({
           </ChartContainer>
 
           {/* Stats */}
-          <div className="flex flex-col gap-1">
-            <span className={cn('font-bold leading-none', isSmall ? 'text-xl' : 'text-2xl')}>
-              {typeof value === 'number' ? value.toLocaleString() : value}
+          <div className="tw:flex tw:flex-col tw:gap-1">
+            <span
+              className={cn(
+                "tw:font-bold tw:leading-none",
+                isSmall ? "tw:text-xl" : "tw:text-2xl",
+              )}
+            >
+              {typeof value === "number" ? value.toLocaleString() : value}
             </span>
             {/* Legend */}
-            <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+            <div className="tw:flex tw:flex-wrap tw:gap-2 tw:text-xs tw:text-muted-foreground">
               {donutData.map((entry) => (
-                <div key={entry.status} className="flex items-center gap-1">
+                <div
+                  key={entry.status}
+                  className="tw:flex tw:items-center tw:gap-1"
+                >
                   <div
-                    className="h-1.5 w-1.5 rounded-full"
-                    style={{ backgroundColor: donutFills[entry.status as keyof typeof donutFills] }}
+                    className="tw:h-1.5 tw:w-1.5 tw:rounded-full"
+                    style={{
+                      backgroundColor:
+                        donutFills[entry.status as keyof typeof donutFills],
+                    }}
                   />
-                  <span>{chartConfig[entry.status as keyof typeof chartConfig].label}</span>
+                  <span>
+                    {
+                      chartConfig[entry.status as keyof typeof chartConfig]
+                        .label
+                    }
+                  </span>
                 </div>
               ))}
             </div>
             {/* Trend */}
             {trend && (
-              <div className={cn(
-                'flex items-center gap-1 text-xs',
-                trend.direction === 'positive' && 'text-primary',
-                trend.direction === 'negative' && 'text-destructive',
-                trend.direction === 'neutral' && 'text-muted-foreground',
-              )}>
-                {trend.direction === 'positive' && <TrendingUp className="h-3 w-3" />}
-                {trend.direction === 'negative' && <TrendingDown className="h-3 w-3" />}
+              <div
+                className={cn(
+                  "tw:flex tw:items-center tw:gap-1 tw:text-xs",
+                  trend.direction === "positive" && "tw:text-primary",
+                  trend.direction === "negative" && "tw:text-destructive",
+                  trend.direction === "neutral" && "tw:text-muted-foreground",
+                )}
+              >
+                {trend.direction === "positive" && (
+                  <TrendingUp className="tw:h-3 tw:w-3" />
+                )}
+                {trend.direction === "negative" && (
+                  <TrendingDown className="tw:h-3 tw:w-3" />
+                )}
                 <span>{trend.value}</span>
               </div>
             )}
@@ -132,5 +154,5 @@ export function MetricCard({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -28,7 +28,7 @@ const donutData = [
 
 export const DonutBasic: Story = {
   render: () => (
-    <ChartContainer config={donutConfig} className="h-[200px] w-[200px]">
+    <ChartContainer config={donutConfig} className="tw:h-50 tw:w-50">
       <PieChart>
         <Pie
           data={donutData}
@@ -54,8 +54,8 @@ export const DonutBasic: Story = {
 
 export const DonutWithLabel: Story = {
   render: () => (
-    <div className="relative flex items-center justify-center">
-      <ChartContainer config={donutConfig} className="h-[200px] w-[200px]">
+    <div className="tw:relative tw:flex tw:items-center tw:justify-center">
+      <ChartContainer config={donutConfig} className="tw:h-50 tw:w-50">
         <PieChart>
           <Pie
             data={donutData}
@@ -73,8 +73,8 @@ export const DonutWithLabel: Story = {
           <ChartTooltip content={<ChartTooltipContent />} />
         </PieChart>
       </ChartContainer>
-      <div className="absolute flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold">5,329</span>
+      <div className="tw:absolute tw:flex tw:flex-col tw:items-center tw:justify-center">
+        <span className="tw:text-2xl tw:font-bold">5,329</span>
       </div>
     </div>
   ),
@@ -93,8 +93,8 @@ const metricConfig = {
 
 export const DonutMetricCard: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
-      <ChartContainer config={metricConfig} className="h-14 w-14">
+    <div className="tw:flex tw:items-center tw:gap-3">
+      <ChartContainer config={metricConfig} className="tw:h-14 tw:w-14">
         <PieChart>
           <Pie
             data={metricDonutData}
@@ -111,11 +111,11 @@ export const DonutMetricCard: Story = {
           </Pie>
         </PieChart>
       </ChartContainer>
-      <div className="flex flex-col gap-1">
-        <span className="text-2xl font-bold">5,329</span>
-        <div className="flex gap-2 text-xs text-muted-foreground">
-          <div className="flex items-center gap-1"><div className='h-2 w-2 rounded-xs' style={{ backgroundColor: metricConfig.active.color }}></div><span>Active 75%</span></div>
-          <div className="flex items-center gap-1"><div className='h-2 w-2 rounded-xs' style={{ backgroundColor: metricConfig.inactive.color }}></div><span>Inactive 25%</span></div>
+      <div className="tw:flex tw:flex-col tw:gap-1">
+        <span className="tw:text-2xl tw:font-bold">5,329</span>
+        <div className="tw:flex tw:gap-2 tw:text-xs tw:text-muted-foreground">
+          <div className="tw:flex tw:items-center tw:gap-1"><div className='tw:h-2 tw:w-2 tw:rounded-xs' style={{ backgroundColor: metricConfig.active.color }}></div><span>Active 75%</span></div>
+          <div className="tw:flex tw:items-center tw:gap-1"><div className='tw:h-2 tw:w-2 tw:rounded-xs' style={{ backgroundColor: metricConfig.inactive.color }}></div><span>Inactive 25%</span></div>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@ const areaData = [
 
 export const AreaBasic: Story = {
   render: () => (
-    <ChartContainer config={areaConfig} className="h-50 w-full">
+    <ChartContainer config={areaConfig} className="tw:h-50 tw:w-full">
       <AreaChart data={areaData}>
         <CartesianGrid vertical={false} />
         <XAxis dataKey="month" tickLine={false} axisLine={false} />

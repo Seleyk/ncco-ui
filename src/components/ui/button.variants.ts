@@ -1,40 +1,38 @@
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from "class-variance-authority";
 
 export const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "tw:group/button tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:rounded-md tw:border tw:border-transparent tw:bg-clip-padding tw:text-sm tw:font-medium tw:whitespace-nowrap tw:transition-all tw:outline-none tw:select-none tw:focus-visible:border-ring tw:focus-visible:ring-3 tw:focus-visible:ring-ring/50 tw:disabled:pointer-events-none tw:disabled:opacity-50 tw:aria-invalid:border-destructive tw:aria-invalid:ring-3 tw:aria-invalid:ring-destructive/20 tw:[&_svg]:pointer-events-none tw:[&_svg]:shrink-0 tw:[&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80 active:bg-primary/90",
+        default:
+          "tw:bg-primary tw:text-primary-foreground tw:hover:bg-primary/80 tw:active:bg-primary/90",
         outline:
-          "text-primary border-primary bg-background shadow-xs hover:bg-primary hover:text-background aria-expanded:bg-muted aria-expanded:text-foreground",
+          "tw:text-primary tw:border-primary tw:bg-background tw:shadow-xs tw:hover:bg-primary tw:hover:text-background tw:aria-expanded:bg-muted tw:aria-expanded:text-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/90 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "tw:bg-secondary tw:text-secondary-foreground tw:hover:bg-secondary/80 tw:active:bg-secondary/90 tw:aria-expanded:bg-secondary tw:aria-expanded:text-secondary-foreground",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
+          "tw:hover:bg-muted tw:hover:text-foreground tw:aria-expanded:bg-muted tw:aria-expanded:text-foreground",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/80 active:bg-destructive/90 focus-visible:border-destructive/40 focus-visible:ring-destructive/20",
-        link: "text-primary underline-offset-4 hover:underline",
+          "tw:bg-destructive tw:text-destructive-foreground tw:hover:bg-destructive/80 tw:active:bg-destructive/90 tw:focus-visible:border-destructive/40 tw:focus-visible:ring-destructive/20",
+        link: "tw:text-primary tw:underline-offset-4 tw:hover:underline",
       },
       size: {
         default:
-          "h-9 gap-1.5 px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),8px)] px-2 text-xs in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-8 gap-1 rounded-[min(var(--radius-md),10px)] px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5",
-        lg: "h-10 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
-        icon: "size-9",
+          "tw:h-9 tw:gap-1.5 tw:px-2.5 tw:in-data-[slot=button-group]:rounded-md tw:has-data-[icon=inline-end]:pr-2 tw:has-data-[icon=inline-start]:pl-2",
+        xs: "tw:h-6 tw:gap-1 tw:rounded-md tw:px-2 tw:text-xs tw:in-data-[slot=button-group]:rounded-md tw:has-data-[icon=inline-end]:pr-1.5 tw:has-data-[icon=inline-start]:pl-1.5 tw:[&_svg:not([class*='size-'])]:size-3",
+        sm: "tw:h-8 tw:gap-1 tw:rounded-md tw:px-2.5 tw:in-data-[slot=button-group]:rounded-md tw:has-data-[icon=inline-end]:pr-1.5 tw:has-data-[icon=inline-start]:pl-1.5",
+        lg: "tw:h-10 tw:gap-1.5 tw:px-2.5 tw:has-data-[icon=inline-end]:pr-3 tw:has-data-[icon=inline-start]:pl-3",
+        icon: "tw:size-9",
         "icon-xs":
-          "size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",
+          "tw:size-6 tw:rounded-[min(var(--radius-md),8px)] tw:in-data-[slot=button-group]:rounded-md tw:[&_svg:not([class*='size-'])]:size-3",
         "icon-sm":
-          "size-8 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-md",
-        "icon-lg": "size-10",
+          "tw:size-8 tw:rounded-[min(var(--radius-md),10px)] tw:in-data-[slot=button-group]:rounded-md",
+        "icon-lg": "tw:size-10",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
+    defaultVariants: { variant: "default", size: "default" },
+  },
+);
 
-export type ButtonVariantsProps = VariantProps<typeof buttonVariants>
+export type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
