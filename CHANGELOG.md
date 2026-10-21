@@ -3,6 +3,15 @@
 All notable changes to @ncco/ui will be documented here.
 Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.1] - 2026-10-20
+
+### Fixed
+
+- Border radius not rendering on components that use arbitrary radius values
+  (e.g. Button). Moved the `--radius-*` scale out of `@theme inline` into a
+  plain `@theme` block so the variables are emitted to `:root` and resolve at
+  runtime.
+
 ## [0.3.0] - 2026-10-20
 
 ### Changed
