@@ -3,6 +3,18 @@
 All notable changes to @ncco/ui will be documented here.
 Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.2] - 2026-10-21
+
+### Fixed
+
+- Border radius not rendering on components that use arbitrary radius values
+  (e.g. Button's `rounded-[min(var(--radius-md),8px)]`). Under `prefix(tw)`,
+  variables declared in `@theme` are emitted as `--tw-*`, so the unprefixed
+  `--radius-*` names referenced literally in component class strings never
+  resolved. Fixed by declaring the `--radius-*` scale in the `:root` block
+  (literal, unaffected by the prefix) rather than in `@theme`.
+
+
 ## [0.3.1] - 2026-10-20
 
 ### Fixed
