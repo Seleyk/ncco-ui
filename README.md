@@ -274,6 +274,26 @@ import {
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
+  Checkbox,
+  Select, 
+  SelectContent, 
+  SelectGroup, 
+  SelectItem, 
+  SelectLabel,
+  SelectSeparator, 
+  SelectTrigger, 
+  SelectValue,
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuCheckboxItem,
+  DropdownMenuLabel, 
+  DropdownMenuSeparator, 
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent, 
+  DropdownMenuSubTrigger, 
+  DropdownMenuTrigger,
 } from "@ncco/ui-alpha";
 ```
 
@@ -371,6 +391,9 @@ This library follows the NCCO Design–Development Process Standard. All compone
 | Progress   | ✅ Complete | ✅        | —                 | —                 | 0.3.0   |
 | Separator  | ✅ Complete | ✅        | —                 | —                 | 0.3.0   |
 | Table      | ✅ Complete | ✅        | —                 | —                 | 0.3.0   |
+| Checkbox   | ✅ Complete | ✅        | ✅               | ✅ Core (toggle/disabled) | 0.3.2 |
+| Select     | ✅ Complete | ✅        | ✅                | ✅ Core (select option) | 0.3.2 |
+| DropdownMenu | ✅ Complete | ✅      | ✅               | ✅ Core (opens)   | 0.3.2   |
 
 \*Destructive variant has 1 known contrast violation (4.43 ratio, requires 4.5:1). Fix: update `destructive-foreground-light` from `neutral.50` to `base.white` in `ncco-semantic.json`.
 

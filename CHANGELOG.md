@@ -3,6 +3,21 @@
 All notable changes to @ncco/ui will be documented here.
 Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.3] - 2026-10-23
+
+### Added
+- `Checkbox` — Radix-based, NCCO tokens. Checked, disabled, and `aria-invalid`
+  states; compose inside `Field`/`FieldLabel` for the bordered selection layout.
+- `Select` — Radix-based. `default`/`sm` trigger sizes, placeholder, groups,
+  labels, separators, and all trigger states (focus, disabled, invalid).
+- `DropdownMenu` — Radix-based. Items, checkbox/radio items, labels, separators,
+  shortcuts, submenus, and a `destructive` item variant.
+
+### Notes
+- `Select` and `DropdownMenu` portal their content to `document.body`.
+  Consumers coexisting with global CSS should portal into a `.ncco-ui`-scoped
+  container so scoped styles reach the floating panel.
+
 ## [0.3.2] - 2026-10-21
 
 ### Fixed

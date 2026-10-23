@@ -10,14 +10,17 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
+import { Checkbox } from "./components/ui/checkbox";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
+import { Select } from "./components/ui/select";
 
 function App() {
   return (
     <div className="">
       <h1 className="tw:text-3xl tw:font-bold">Button Component</h1>
       <div className="tw:flex tw:gap-4 tw:flex-col tw:md:flex-row tw:items-center tw:justify-center tw:mt-4">
+        <Checkbox></Checkbox>
         <Button variant="default">Add story</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="destructive">Destructive</Button>

@@ -1,4 +1,4 @@
-import "./index.css"
+import "./index.css";
 
 export { cn } from "./lib/utils";
 export { Button } from "./components/ui/button";
@@ -9,8 +9,41 @@ export { Input } from "./components/ui/input";
 export { Label } from "./components/ui/label";
 export { Separator } from "./components/ui/separator";
 export { Progress } from "./components/ui/progress";
-export { MetricCard } from './components/ui/metric-card'
-export type { MetricCardProps, MetricCardTrend } from './components/ui/metric-card'
+export { MetricCard } from "./components/ui/metric-card";
+export { Checkbox } from "./components/ui/checkbox";
+export type {
+  MetricCardProps,
+  MetricCardTrend,
+} from "./components/ui/metric-card";
+export {
+  DropdownMenu,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+} from './components/ui/dropdown-menu'
+export {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "./components/ui/select";
 export {
   Field,
   FieldLabel,
@@ -39,8 +72,8 @@ export {
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
-} from './components/ui/chart'
-export type { ChartConfig } from './components/ui/chart'
+} from "./components/ui/chart";
+export type { ChartConfig } from "./components/ui/chart";
 export {
   Table,
   TableHeader,
@@ -50,4 +83,4 @@ export {
   TableRow,
   TableCell,
   TableCaption,
-} from './components/ui/table'
+} from "./components/ui/table";
