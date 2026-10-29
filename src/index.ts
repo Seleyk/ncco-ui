@@ -16,6 +16,31 @@ export type {
   MetricCardTrend,
 } from "./components/ui/metric-card";
 export {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./components/ui/alert-dialog";
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/ui/dialog"
+export {
   DropdownMenu,
   DropdownMenuPortal,
   DropdownMenuTrigger,
@@ -31,7 +56,7 @@ export {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from './components/ui/dropdown-menu'
+} from "./components/ui/dropdown-menu";
 export {
   Select,
   SelectContent,
